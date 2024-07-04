@@ -1,0 +1,33 @@
+.ProfileCard{
+    margin-right: 3em;
+    display: grid;
+    grid-template-areas:
+"name image"
+"company image";
+}
+
+.ProfileCard h2{
+    margin: 0 1em;
+    grid-area: name;
+    font-size: 14px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    text-align: right;
+}
+
+.ProfileCard p{
+    margin: 0em 1em;
+    grid-area: company;
+    font-size: 12px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    color: #0038A8;
+    text-align: right;
+}
+
+.ProfileCard img{
+    width: 2em;
+    height: 2em;
+    grid-area: image;
+    border-radius: 50%;
+}

@@ -1,0 +1,27 @@
+.SideBarMenu {
+    width: fit-content;
+    padding: 0;
+}
+
+.SideBarOption {
+    list-style: none;
+    padding: 1em 2em;
+    border-radius: 10px;
+    color: #1B1B1B;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.SideBarOptionIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+.SideBarOption:hover {
+    background-color: #F2F2F2;
+}

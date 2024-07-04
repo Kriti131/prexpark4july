@@ -1,0 +1,33 @@
+/* src/components/chart/Chart.css*/
+
+.ChartContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start; /* Align items to the top */
+    width: 100%;
+}
+
+.Chart {
+    flex: 1; /* Occupy all available space */
+    height: 400px;
+    position: relative; /* Position relative for child elements */
+}
+
+.Chart:not(:last-child) {
+    padding-right: 1em; /* Add padding to separate charts */
+}
+
+.Chart:last-child {
+    padding-left: 1em; /* Add padding to separate charts */
+}
+
+.Chart:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 0;
+    height: 80%;
+    width: 2px;
+    background-color: #ECEEF6;
+}

@@ -1,0 +1,8 @@
+.SideBar {
+    width: 240px;
+    height: calc(100vh - 60px); /* Total Height - Header Height*/
+    border-right: 2px solid #E6EBF3;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
