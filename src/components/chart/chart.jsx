@@ -7,100 +7,73 @@ const Chart = () => {
     const peakHoursChartRef = useRef(null);
 
     const initParkingsChart = (container) => {
-        // const chart = echarts.init(container);
-        // const option = {
-        //     title: {
-        //         text: 'No. of Parkings'
-        //     },
-        //     tooltip: {
-        //         trigger: 'axis'
-        //     },
-        //     xAxis: {
-        //         type: 'category',
-        //         data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-        //     },
-        //     yAxis: {
-        //         type: 'value'
-        //     },
-        //     series: [
-        //         {
-        //             name: 'No. of Parkings',
-        //             type: 'line',
-        //             data: [50, 75, 60, 75, 70, 55, 80],
-        //             smooth: true
-        //         },
-        //         {
-        //             name: 'No. of Parkings',
-        //             type: 'line',
-        //             data: [30, 40, 35, 50, 45, 30, 25],
-        //             smooth: true
-        //         }
-        //     ]
-        // };
-        // chart.setOption(option);
         const chart = echarts.init(container);
-    const option = {
-        title: {
-            text: 'No. of Parkings'
-        },
-        tooltip: {
-            trigger: 'axis'
-        },
-        xAxis: {
-            type: 'category',
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-        },
-        yAxis: {
-            type: 'value'
-        },
-        series: [
-            {
-                name: 'No. of Parkings',
-                type: 'line',
-                data: [50, 75, 60, 75, 70, 55, 80],
-                smooth: true,
-                lineStyle: {
-                    color: 'darkblue' // Dark blue color for the first line
-                },
-                itemStyle: {
-                    color: 'darkblue', // Fill color for the data points
-                    borderColor: 'darkblue', // Border color for the data points
-                    borderWidth: 2 // Border width for the data points
-                },
-                symbol: 'circle', // Shape of the data points
-                symbolSize: 8 // Size of the data points
+        const option = {
+            grid: {
+                bottom: 60 
             },
-            {
-                name: 'No. of Parkings',
-                type: 'line',
-                data: [30, 40, 35, 50, 45, 30, 25],
-                smooth: true,
-                lineStyle: {
-                    color: 'skyblue' // Sky blue color for the second line
+            tooltip: {
+                trigger: 'axis',
+                textStyle: {
+                    fontFamily: 'Outfit' 
+                }
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                axisLabel: {
+                    fontFamily: 'Outfit' 
+                }
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel: {
+                    fontFamily: 'Outfit' 
+                }
+            },
+            series: [
+                {
+                    name: 'No. of Parkings',
+                    type: 'line',
+                    data: [50, 75, 60, 75, 70, 55, 80],
+                    smooth: true,
+                    lineStyle: {
+                        color: 'darkblue' 
+                    },
+                    itemStyle: {
+                        color: 'darkblue', 
+                        borderColor: 'darkblue', 
+                        borderWidth: 2 
+                    },
+                    symbol: 'circle', 
+                    symbolSize: 8 
                 },
-                itemStyle: {
-                    color: 'skyblue', // Fill color for the data points
-                    borderColor: 'skyblue', // Border color for the data points
-                    borderWidth: 2 // Border width for the data points
-                },
-                symbol: 'circle', // Shape of the data points
-                symbolSize: 8 // Size of the data points
-            }
-        ]
-    };
-    chart.setOption(option);
+                {
+                    name: 'No. of Parkings',
+                    type: 'line',
+                    data: [30, 40, 35, 50, 45, 30, 25],
+                    smooth: true,
+                    lineStyle: {
+                        color: 'skyblue'
+                    },
+                    itemStyle: {
+                        color: 'skyblue',
+                        borderColor: 'skyblue', 
+                        borderWidth: 2 
+                    },
+                    symbol: 'circle', 
+                    symbolSize: 8 
+                }
+            ]
+        };
+        chart.setOption(option);
     };
 
     const initPeakHoursChart = (container) => {
         const chart = echarts.init(container);
         const option = {
-            title: {
-                text: 'Peak Hours throughout the week',
-                left: 'center',
-                textStyle: {
-                    fontWeight: 'normal',
-                    fontSize: 16
-                }
+            grid: {
+                bottom: 60 
             },
             tooltip: {
                 trigger: 'axis',
@@ -109,6 +82,9 @@ const Chart = () => {
                     label: {
                         backgroundColor: '#6a7985'
                     }
+                },
+                textStyle: {
+                    fontFamily: 'Outfit' 
                 }
             },
             xAxis: {
@@ -121,7 +97,8 @@ const Chart = () => {
                     }
                 },
                 axisLabel: {
-                    color: '#000000'
+                    color: '#000000',
+                    fontFamily: 'Outfit' 
                 }
             },
             yAxis: {
@@ -132,7 +109,8 @@ const Chart = () => {
                     }
                 },
                 axisLabel: {
-                    color: '#000000'
+                    color: '#000000',
+                    fontFamily: 'Outfit' // Set the font family
                 },
                 splitLine: {
                     lineStyle: {
@@ -173,42 +151,50 @@ const Chart = () => {
                                 label: {
                                     show: true,
                                     formatter: '{c}',
-                                    position: 'top'
+                                    position: 'top',
+                                    fontFamily: 'Outfit' // Set the font family
                                 }
                             }
                         ]
                     },
-                    markLine: {
-                        data: [
-                            {
-                                xAxis: '12:00',
-                                lineStyle: {
-                                    color: '#FF0000',
-                                    type: 'dashed'
-                                }
-                            }
-                        ]
-                    }
+                    // Removed markLine here
                 }
             ]
         };
         chart.setOption(option);
-    
     };
 
     useEffect(() => {
+        const handleResize = () => {
+            if (parkingsChartRef.current) {
+                echarts.getInstanceByDom(parkingsChartRef.current).resize();
+            }
+            if (peakHoursChartRef.current) {
+                echarts.getInstanceByDom(peakHoursChartRef.current).resize();
+            }
+        };
+        window.addEventListener('resize', handleResize);
         if (parkingsChartRef.current) {
             initParkingsChart(parkingsChartRef.current);
         }
         if (peakHoursChartRef.current) {
             initPeakHoursChart(peakHoursChartRef.current);
         }
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     return (
         <div className="ChartContainer">
-            <div ref={parkingsChartRef} className="Chart"></div>
-            <div ref={peakHoursChartRef} className="Chart"></div>
+            <div className="ChartWrapper">
+                <div ref={parkingsChartRef} className="Chart"></div>
+                <div className="ChartHeading">No. of Parkings</div>
+            </div>
+            <div className="ChartWrapper">
+                <div ref={peakHoursChartRef} className="Chart"></div>
+                <div className="ChartHeading">Peak Hours throughout the week</div>
+            </div>
         </div>
     );
 };
